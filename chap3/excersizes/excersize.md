@@ -27,14 +27,14 @@ a. Exponential notation; left-justified in a field of size 8; one digit after de
 ## 3. Are pairs of scanf format strings equivalent?
 
 a. "%d" vs " %d"
-
 - Equivalent
   b. "%d-%d-%d" vs "%d -%d -%d"
-- Not Equivalent?
+- Not Equivalent: first string can only taken in #-#-#, if there is # -#-#, the latter half will be put back for another scanf call
   c. "%f" vs "%f "
 - Equivalent
   d. "%f,%f" vs "%f, %f"
-- Not Equivalent?
+- Equivalent
+/-? If scanf just ignores all whitespaces, all of these should be equivalant no?
 
 ## 4. scanf assignments with varying conversion specifiers
 
@@ -85,9 +85,9 @@ int main(void){
     int num1, denom1, num2, denom2, result_num, result_denom;
 
     printf("Enter first fraction: ");
-    scanf(" %d / %d ", &num1, &denom1);
+    scanf("%d / %d", &num1, &denom1);
     printf("Enter second fraction: ");
-    scanf(" %d / %d ", &num2, &denom2);
+    scanf("%d / %d", &num2, &denom2);
     result_num = num1 * denom2 + num2 * denom1;
     result_denom = denom1 * denom2;
     printf("The sum is %d/%d\n", result_num, result_denom);
