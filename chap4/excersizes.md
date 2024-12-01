@@ -22,7 +22,7 @@ a. 8 / 5
 b. -8 / 5
 - -1 or -2
 c. 8 / -5
-- -1 or -2 <-- ?
+- -1 or -2
 d. -8 / -5
 - 1
 
@@ -38,9 +38,11 @@ a. 8 % 5
 b. -8 % 5
 - -3 or 2
 c. 8 % -5
-- -3 or 2
+WRONG - -3 or 2 
+correct - 3 or -2
 d. -8 % -5
-- 3
+WRONG - 3
+correct - -3 or 2
 
 # Problem 6 - Problem 5 but in C99
 a. 8 % 5
@@ -48,9 +50,9 @@ a. 8 % 5
 b. -8 % 5
 - -3
 c. 8 % -5
-- -3
-d. -8 % -5
 - 3
+d. -8 % -5
+- -3
 
 # Problem 7 - Computing UPC check digit procedure
 - Correct
@@ -63,9 +65,9 @@ d. -8 % -5
 
 Ans: If the total is something ending with a zero you get a wrong answer of 10 instead of 9.
 
-# Problem 8 - upc.c orignal vs modified
+# Problem 8 - upc.c orignal vs modified - Why does it not work?
 9 - ((total - 1) % 10) vs (10 - (total % 10)) % 10
-Ans: If total is 140 the original path gets the result 9, the other path gets 0. So it is incorrect.
+Ans: If total is 140 the original path gets the result 9, the other path gets 0. So it is incorrect. <<--- clarification??
 
 # Problem 9 - Output
 a.  i = 7; j = 8;
@@ -81,7 +83,7 @@ b.  i = j = k = 1;
 c.  i = 1; j = 2; k = 3;
     i -= j -= k;
     printf("%d %d %d", i, j, k);
-- 0, -1, 3
+- 2, -1, 3
 
 d.  i = 2; j = 1, k = 0;
     i *= j *= k;
@@ -102,7 +104,8 @@ b.  i = 5;
 c.  i = 7;
     j = 6 + (i = 2.5);
     printf("%d %d", i, j);
-- 2.5 8.5
+WRONG - 2.5 8.5
+i is int so it casts to int: correct - 2 8
 
 d.  i = 2; j = 8;
     j = (i = 6) + (j = 3);
@@ -113,50 +116,47 @@ d.  i = 2; j = 8;
 a.  i = 1;
     printf("%d ", i++ - 1);
     printf("%d", i);
-- 1
+- 
 
 b.  i = 10; j = 5;
     printf("%d ", i++ - ++j);
     printf("%d %d", i, j);
-- 6
-- 11 6
+- 
 
 c.  i = 7; j = 8;
     printf("%d ", i++ - --j);
     printf("%d %d", i, j);
-- 0
-- 8 7
+- 
 
 d.  i = 3; j = 4, k = 5;
     printf("%d ", i++ - j++ + --k);
     printf("%d %d %d", i, j, k);
-- 4
-- 4 5 4
+- 
 
 # Problem 12
 a.  i = 5; 
     j = ++i * 3 - 2;
     printf("%d %d", i, j);
-- 6 13
+- 
 
 b.  i = 5;
     j = 3 - 2 * i++;
     printf("%d %d", i, j);
-- 6 -9
+- 
 
 c.  i = 7;
     j = 3 * i-- + 2;
     printf("%d %d", i, j);
-- 6 20
+- 
 
 d.  i = 7;
     j = 3 + --i * 2;
     printf("%d %d", i, j);
-- 6 17
+- 
 
 # Problem 13
 Is ++i or i++ EXACTLY the same to i += 1?
-i++ is exactly the same because if you were to call i += 1 in its own statement it would return whatever i was + 1
+++i is exactly the same because if you were to call i += 1 in its own statement it would return i + 1
 
 # Problem 14 - Add parenthesis to expressions
 a. a * b - c * d + e
@@ -172,7 +172,7 @@ d. a * - b / c - d
 a. i += j;
 - i = 3, j = 2
 b. i--;
-- i = 0
+- i = 1
 c. i * j / i;
 - i = 1, j = 2
 d. i % ++j;
