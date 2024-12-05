@@ -1,18 +1,27 @@
 # Problem 1 - Give output from program frags
 a.
 ```C
+i = 2; j = 3;
+k = i * j == 6;
+printf("%d", k);
 ```
 - 
 b.
 ```C
+i = 5; j = 10; k = 1;
+printf("%d", k > i < j);
 ```
 - 
 c.
 ```C
+i = 3; j = 2; k = 1;
+printf("%d", i < j == j < k);
 ```
 - 
 d.
 ```C
+i = 3; j = 4; k = 5;
+printf("%d", i % j + i < k);
 ```
 - 
 
