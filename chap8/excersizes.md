@@ -10,11 +10,11 @@
 
 # Problem 6 - Write a 2D array that contains the segments of all the seven segment numbers. 
 ```
- _   0
-| | 5 1
- _   6
-| | 4 2
- _   3
+ _    0
+| |  5 1
+ _    6
+| |  4 2
+ _    3
 ```
 start off: `const int segments[10][7] = {{1, 1, 1, 1, 1, 1, 0}, ...}`
 
